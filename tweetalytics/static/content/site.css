@@ -1,6 +1,7 @@
 body {
-    padding-top: 50px;
+    padding-top: 0;
     padding-bottom: 20px;
+    font-family: 'Raleway', sans-serif !important;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -12,7 +13,8 @@ body {
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
-textarea {
+textarea,
+.dropdown {
     max-width: 280px;
 }
 
@@ -39,4 +41,68 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
     display: none;
+}
+
+#submit_username_button {
+    border-left-width: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#id-input {
+    border-radius: 0;
+    border-left-width: .5px;
+    border-right-width: .5px;
+}
+
+.loading {
+    background-image: url("../images/loading.gif");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+.card-block {
+    margin: 10px;
+}
+
+.card-body {
+    overflow: scroll;
+    min-height: 100px;
+}
+
+#user-img {
+    max-height: 150px;
+    max-width: 150px;
+    transform: translateY(-50%);
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    float: right;
+}
+
+#profile-banner {
+}
+
+#meta-card {
+}
+
+#user_data_container {
+    background-color: transparent;
+}
+
+#hm {
+    min-height: 400px;
+}
+
+#tt {
+    max-height: 500px;
 }

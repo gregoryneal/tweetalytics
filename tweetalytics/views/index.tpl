@@ -1,29 +1,100 @@
-% rebase('layout.tpl', title='Home Page', year=year)
+% rebase('layout.tpl', title='Home Page')
 
 <div class="jumbotron">
-    <h1>Bottle</h1>
-    <p class="lead">Bottle is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://bottlepy.org/docs/dev/index.html" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <h1>tweetalytics</h1>
+    <p class="lead">view analytics of your favorite tweeter, just enter their username or twitter id.</p>
+
+	<form id="claws">
+		<div class="input-group">
+			<span class="input-group-addon" id="id-type">@</span>
+			%if defined('invalid_id'):
+				<input type="text" class="form-control input-validation-error" value="{{ invalid_id }}" id="id-input" name="id-input">
+			%else:
+				<input type="text" class="form-control" placeholder="BarackObama" id="id-input" name="id-input">
+			%end
+			<input type="submit" id="submit_username_button" class="btn btn-secondary loading" value="&raquo;" />
+		</div>
+	</form>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Bottle gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://bottlepy.org/docs/dev/index.html">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
+<div class="container-fluid" id="user_data_container" hidden>
+
+	<div class="card-column">
+
+		<div class="card mx-auto" id="meta-card">
+			<img class="card-img-top" id="profile-banner" src="/static/images/default-banner.png">
+			<div class="card-block">
+				<img id="user-img" src="/static/images/default-profile.png">
+				<h5 class="card-title" id="screen-name-text">@example</h5>
+				<h6 class="card-subtitle text-muted" id="stat-caption"></h6>
+			</div>
+		</div>
+
+		<div class="card mx-auto">
+			<div class="card-header">
+				Word Frequency
+			</div>
+			<div class="card-body" id="wf">						
+			</div>
+			<div class="card-footer text-muted">
+				how often the person uses specific words
+			</div>
+		</div>
+
+		<div class="card mx-auto">
+			<div class="card-header">
+				Hashtag Frequency
+			</div>
+			<div class="card-body" id="hf">						
+			</div>
+			<div class="card-footer text-muted">
+				how often the person uses specific hashtags
+			</div>
+		</div>
+
+		<div class="card mx-auto">
+			<div class="card-header">
+				User Mention Frequency
+			</div>
+			<div class="card-body" id="mf">						
+			</div>
+			<div class="card-footer text-muted">
+				how often the person mentions specific users
+			</div>
+		</div>
+
+		<div class="card mx-auto">
+			<div class="card-header">
+				Tweet Timeline
+			</div>
+			<div class="card-body" id="tt">						
+			</div>
+			<div class="card-footer text-muted">
+				how often the person tweets over time
+			</div>
+		</div>
+
+		<div class="card mx-auto">
+			<div class="card-header">
+				Tweetmap
+			</div>
+			<div class="card-body" id="hm">						
+			</div>
+			<div class="card-footer text-muted">
+				a glimpse into the users tweeting habits by mapping the average times of day the user tweets
+			</div>
+		</div>
+
+		<div class="card mx-auto">
+			<div class="card-header">
+				Semantic Timeline
+			</div>
+			<div class="card-body" id="st">						
+			</div>
+			<div class="card-footer text-muted">
+				a plot of polarity: the positivity or negativity of the text, and subjectivity: a measure of the subjectiveness of the text
+			</div>
+		</div>
+
+	</div>
 </div>
