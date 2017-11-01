@@ -259,3 +259,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+*.pyproj
+bootstrap-4.0.0-alpha.6-dist.zip
+*.sln
+tweetalytics/static/scripts/d3.js
+tweetalytics/static/scripts/bootstrap.js
+tweetalytics/static/content/bootstrap.css
